@@ -1,10 +1,14 @@
 import React, { useState, useRef } from 'react';
+import pinImg from './assets/pin.png'; 
 
-const StickyNote = ({ color, initialPosition }) => {
+const StickyNote = ({ id, color, initialPosition, onDelete }) => {
   const [position, setPosition] = useState(initialPosition);
+  const [title, setTitle] = useState('Note Title');
+  const [body, setBody] = useState('');
   const noteRef = useRef(null);
 
   const handleMouseDown = (e) => {
+    if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
     const offsetX = e.clientX - position.x;
     const offsetY = e.clientY - position.y;
 
@@ -35,9 +39,19 @@ const StickyNote = ({ color, initialPosition }) => {
       }}
       onMouseDown={handleMouseDown}
     >
-      <div className="sticky-note-body">
-        <textarea placeholder="Write here..."></textarea>
-      </div>
+      <img src={pinImg} alt="pin" className="pin-graphic" />
+      <button className="delete-btn" onClick={() => onDelete(id)}>✕</button>
+      <input
+        className="note-title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <textarea
+        className="note-body"
+        value={body}
+        onChange={(e) => setBody(e.target.value)}
+        placeholder="Write here..."
+      />
     </div>
   );
 };

@@ -18,12 +18,11 @@ body {
 
 .board {
   position: relative;
-  width: 95%;
+  width: 97%;
   height: 94vh;
   background-image: url('https://www.transparenttextures.com/patterns/corkboard.png');  
   background-size: cover;
   border-radius: 10px;
-  border: 1px solid #ccc;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: flex;
@@ -113,4 +112,185 @@ body {
 
 .add-note-btn:hover {
   background-color: #45a049;
+}
+
+.sticky-note {
+  position: absolute;
+  width: 180px;
+  height: 220px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.pin-graphic {
+  width: 15px;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.note-title {
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  width: 100%;
+  background: transparent;
+  outline: none;
+  margin-bottom: 5px;
+}
+
+.note-body {
+  width: 100%;
+  height: 150px;
+  border: none;
+  background: transparent;
+  resize: none;
+  font-size: 13px;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #ff5c5c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 18px;
+  text-align: center;
+  padding: 0;
+}
+
+.upload-label {
+  font-size: 14px;
+  padding: 6px 10px;
+  background-color: #fff6f0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.upload-label input {
+  display: none;
+}
+
+.pin-graphic {
+  width: 14px;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.note-title {
+  font-weight: bold;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  background: transparent;
+  outline: none;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.note-body {
+  width: 100%;
+  height: 150px;
+  border: none;
+  background: transparent;
+  resize: none;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #ff5c5c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 18px;
+  text-align: center;
+  padding: 0;
+}
+
+.draggable-image {
+  position: absolute;
+  cursor: move;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.draggable-image img {
+  width: 30%;
+  height: 30%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.resize-handle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #333;
+  right: 0;
+  bottom: 0;
+  cursor: se-resize;
+}
+
+.color-circles {
+  display: flex;
+  gap: 10px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.color-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #fffff;
+  cursor: pointer;
+}
+
+.draggable-image {
+  position: absolute;
+  overflow: hidden;
+  border: 0.5px solid #888;
+  border-radius: 8px;
+  user-select: none;
+}
+
+.draggable-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.resize-handle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #333;
+  right: 0;
+  bottom: 0;
+  cursor: se-resize;
 }
